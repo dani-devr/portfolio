@@ -1,0 +1,232 @@
+:root {
+    --primary: #5865F2; /* Discord blurple */
+    --primary-light: #7983f5;
+    --dark: #121212;
+    --darker: #0a0a0a;
+    --light: #f5f5f5;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--dark);
+    color: var(--light);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(circle at 70% 30%, rgba(88, 101, 242, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.hero h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease 0.2s both;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    animation: fadeInDown 1s ease 0.4s both;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+/* Animated Talk Button */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.btn-talk {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 2rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+    animation: pulse 2s infinite 2s;
+}
+
+.btn-talk::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-talk:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(88, 101, 242, 0.4);
+}
+
+.btn-talk:hover::before {
+    left: 100%;
+}
+
+.btn-talk:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.btn-talk i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-talk:hover i {
+    transform: scale(1.1);
+}
+
+/* Floating Code Icon */
+.floating-icon {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    background: rgba(88, 101, 242, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: var(--primary);
+    animation: float 6s ease-in-out infinite;
+}
+
+.pulse-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    animation: pulse 3s infinite;
+    opacity: 0;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(88, 101, 242, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(88, 101, 242, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(88, 101, 242, 0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-50%) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-50%) translateX(-20px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(-50%) translateX(0) rotate(0deg);
+    }
+}
+
+/* Particles */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+/* Add this rule to ensure button is clickable */
+.btn-talk {
+    position: relative;
+    z-index: 10; /* Ensure button stays above particles */
+}
+
+/* Add this to ensure particles don't intercept clicks */
+#particles-js {
+    pointer-events: none; /* Allows clicks to pass through to button */
+}
