@@ -6,12 +6,19 @@
     <title>Dani | Roblox Scripter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="particles-js"></div>
     
     <section class="hero">
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll down</span>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <h4>Portfolio</h4>
@@ -20,6 +27,9 @@
                 <div class="cta-buttons">
                     <a href="https://discord.com/users/1323741942256898088" target="_blank" rel="noopener noreferrer" class="btn btn-talk">
                         <i class="fab fa-discord"></i> Talk to me
+                    </a>
+                    <a href="#pricing" class="btn btn-pricing">
+                        <i class="fas fa-tags"></i> Pricing
                     </a>
                 </div>
             </div>
@@ -30,7 +40,165 @@
         </div>
     </section>
 
+    <section class="videos-section">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+            <p class="section-subtitle">Showcase of my Roblox scripting work</p>
+            
+            <div class="video-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <div class="plyr__video-embed" id="player1">
+                            <iframe
+                                src="First.mp4"
+                                allowfullscreen
+                                allowtransparency
+                                allow="autoplay"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Simple Farming</h3>
+                        <p>A fully customizable farming thing idk</p>
+                        <div class="video-tags">
+                            <span>LuaU</span>
+                            <span>Roblox</span>
+                            <span>Farming</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Card 2 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <div class="plyr__video-embed" id="player2">
+                            <iframe
+                                src="Second.mp4"
+                                allowfullscreen
+                                allowtransparency
+                                allow="autoplay"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Simple Katana Combat</h3>
+                        <p>Simpla katana combat full customizable to add more weapons.</p>
+                        <div class="video-tags">
+                            <span>LuaU</span>
+                            <span>Combat</span>
+                            <span>Idk</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Card 3 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <div class="plyr__video-embed" id="player3">
+                            <iframe
+                                src="Third.mp4"
+                                allowfullscreen
+                                allowtransparency
+                                allow="autoplay"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Custom Battlegrounds</h3>
+                        <p>It's not finished and it's only the m1's, and it's fully customizable</p>
+                        <div class="video-tags">
+                            <span>Idk</span>
+                            <span>Battlegrounds</span>
+                            <span>LuaU</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Pricing</span></h2>
+            <p class="section-subtitle">Choose the package that fits your needs</p>
+            
+            <div class="pricing-grid">
+                <!-- Basic Tier -->
+                <div class="pricing-card basic">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <div class="price">
+                            <span class="currency">Robux</span>
+                            <span class="amount">1K-3K</span>
+                        </div>
+                        <p class="price-description">Simple scripts with basic functionality</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Simple systems</li>
+                            <li><i class="fas fa-check"></i> Basic functionality</li>
+                            <li><i class="fas fa-check"></i> Limited customization</li>
+                            <li><i class="fas fa-check"></i> 1-3 days delivery</li>
+                            <li><i class="fas fa-check"></i> 1 revision included</li>
+                        </ul>
+                    </div>
+                    <a href="https://discord.com/users/1323741942256898088" class="btn btn-purchase">Get Started</a>
+                </div>
+                
+                <!-- Medium Tier -->
+                <div class="pricing-card medium featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Medium</h3>
+                        <div class="price">
+                            <span class="currency">Robux</span>
+                            <span class="amount">5K-10K</span>
+                        </div>
+                        <p class="price-description">Advanced scripts with more features</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Intermediate systems</li>
+                            <li><i class="fas fa-check"></i> Multiple features</li>
+                            <li><i class="fas fa-check"></i> Customizable options</li>
+                            <li><i class="fas fa-check"></i> 3-7 days delivery</li>
+                            <li><i class="fas fa-check"></i> 3 revisions included</li>
+                            <li><i class="fas fa-check"></i> Basic documentation</li>
+                        </ul>
+                    </div>
+                    <a href="https://discord.com/users/1323741942256898088" class="btn btn-purchase">Get Started</a>
+                </div>
+                
+                <!-- Hard Tier -->
+                <div class="pricing-card hard">
+                    <div class="pricing-header">
+                        <h3>Hard</h3>
+                        <div class="price">
+                            <span class="currency">Robux</span>
+                            <span class="amount">10K-15K</span>
+                        </div>
+                        <p class="price-description">Complex scripts with premium features</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Complex systems</li>
+                            <li><i class="fas fa-check"></i> Premium features</li>
+                            <li><i class="fas fa-check"></i> Fully customizable</li>
+                            <li><i class="fas fa-check"></i> 7-14 days delivery</li>
+                            <li><i class="fas fa-check"></i> Unlimited revisions</li>
+                            <li><i class="fas fa-check"></i> Detailed documentation</li>
+                            <li><i class="fas fa-check"></i> Priority support</li>
+                        </ul>
+                    </div>
+                    <a href="https://discord.com/users/1323741942256898088" class="btn btn-purchase">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
