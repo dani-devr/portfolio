@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Particles.js initialization
     particlesJS('particles-js', {
         particles: {
             number: { value: 60 },
@@ -48,4 +49,34 @@ document.addEventListener('DOMContentLoaded', function() {
         // Remove ripple after animation
         setTimeout(() => ripple.remove(), 600);
     });
+
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('.plyr__video-embed')).map(
+        el => new Plyr(el, {
+            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+            ratio: '16:9',
+            hideControls: false
+        })
+    );
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+
+// Add this to your script.js file
+window.addEventListener('scroll', function() {
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (window.scrollY > 100) {
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.transition = 'opacity 0.5s ease';
+    } else {
+        scrollIndicator.style.opacity = '1';
+    }
 });
